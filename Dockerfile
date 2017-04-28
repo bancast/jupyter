@@ -1,5 +1,9 @@
+# Jupyter
+#
+# VERSION       1.0
+
 FROM alpine:3.5
-MAINTAINER Jack Stephenson <docker@bancast.net>
+LABEL maintainer "Jack Stephenson <docker@bancast.net>"
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -23,6 +27,6 @@ ONBUILD RUN apk add --no-cache --virtual .build-deps \
     && apk add --virtual .rundeps $runDeps \
     && apk del .build-deps
 
-ONBUILD COPY examples examples
+EXPOSE 8888
 
-CMD ["jupyter", "notebook"]
+ENTRYPOINT ["jupyter", "notebook"]
