@@ -1,6 +1,6 @@
 # Jupyter
 #
-# VERSION       1.0
+# VERSION       0.1
 
 FROM alpine:3.5
 LABEL maintainer "Jack Stephenson <docker@bancast.net>"
